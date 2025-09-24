@@ -1,0 +1,366 @@
+<!doctype html><html class=no-js lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>FigureYa101PCA - 生信普拉斯</title>
+<script>(function(e,t){e[t]=e[t].replace("no-js","js")})(document.documentElement,"className")</script><meta name=description content><meta property="og:url" content="https://ixxmu.github.io/posts/figureya/figureya101pca/figureya101pca/"><meta property="og:site_name" content="生信普拉斯"><meta property="og:title" content="FigureYa101PCA"><meta property="og:description" content="FigureYa101PCA Xiaofan Lu, Taojun Ye 2025-5-20 Academic Citation If you use this code in your work or research, we kindly request that you cite our publication:"><meta property="og:locale" content="zh_cn"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-09-24T00:00:00+00:00"><meta property="article:modified_time" content="2025-09-24T00:00:00+00:00"><meta property="article:tag" content="R"><meta property="article:tag" content="Plot"><meta itemprop=name content="FigureYa101PCA"><meta itemprop=description content="FigureYa101PCA Xiaofan Lu, Taojun Ye 2025-5-20 Academic Citation If you use this code in your work or research, we kindly request that you cite our publication:"><meta itemprop=datePublished content="2025-09-24T00:00:00+00:00"><meta itemprop=dateModified content="2025-09-24T00:00:00+00:00"><meta itemprop=wordCount content="2408"><meta itemprop=keywords content="R,Plot"><meta name=twitter:card content="summary"><meta name=twitter:title content="FigureYa101PCA"><meta name=twitter:description content="FigureYa101PCA Xiaofan Lu, Taojun Ye 2025-5-20 Academic Citation If you use this code in your work or research, we kindly request that you cite our publication:"><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=dns-prefetch href=//fonts.googleapis.com><link rel=dns-prefetch href=//fonts.gstatic.com><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700"><link rel=stylesheet href=../../../../css/style.css><link rel=stylesheet href=../../../../css/custom.css><link rel="shortcut icon" href=../../../../favicon.ico></head><body class=body><div class="container container--outer"><header class=header><div class="container header__container"><div class=logo><a class=logo__link href=../../../../ title=生信普拉斯 rel=home><div class="logo__item logo__text"><div class=logo__title>生信普拉斯</div><div class=logo__tagline>近十年最值得上手的生物医学生信代码</div></div></a></div><nav class=menu><button class=menu__btn aria-haspopup=true aria-expanded=false tabindex=0>
+<span class=menu__btn-title tabindex=-1>Menu</span></button><ul class=menu__list><li class=menu__item><a class=menu__link href=../../../../posts/><span class=menu__text>文章</span></a></li><li class=menu__item><a class=menu__link href=../../../../tags/><span class=menu__text>标签</span></a></li><li class=menu__item><a class=menu__link href=../../../../about/><span class=menu__text>关于</span></a></li></ul></nav></div></header><div class="wrapper flex"><div class=primary><main class=main role=main><article class=post><header class=post__header><meta name=referrer content="never"><h1 class=post__title>FigureYa101PCA</h1><div class="post__meta meta"><div class="meta__item-datetime meta__item"><svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0a14 14 0 110 28 1 1 0 010-28m0 3a3 3 0 100 22 3 3 0 000-22m1 4h-2v8.4l6.8 4.4L22 18l-6-3.8z"/></svg><time class=meta__text datetime=2025-09-24T00:00:00Z>2025-09-24</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2 1 2h8v11H0V2z"/></svg><span class=meta__text><a class=meta__link href=../../../../categories/learnr/ rel=category>LearnR</a></span></div><div class="meta__item-author meta__item"><svg class="meta__icon icon icon-author" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1c2 0 3.5 2 3.5 4.5S10 9 10 9c3 1 4 2 4 6H2c0-4 1-5 4-6 0 0-1.5-1-1.5-3.5S6 1 8 1"/></svg><span class=meta__text>Bloger</span></div></div></header><div class="post__toc toc"><div class=toc__title>Page content</div><div class=toc__menu><nav id=TableOfContents><ul><li><ul><li></li></ul></li></ul><ul><li><a href=#需求描述>需求描述</a></li><li><a href=#requirement-description>Requirement description</a></li><li><a href=#应用场景>应用场景</a></li><li><a href=#application-scenarios>Application scenarios</a></li><li><a href=#环境设置>环境设置</a></li><li><a href=#environment-settings>Environment settings</a></li><li><a href=#自定义函数>自定义函数</a></li><li><a href=#custom-functions>Custom functions</a></li><li><a href=#场景一多个批次>场景一，多个批次</a><ul><li><a href=#输入文件>输入文件</a></li></ul></li><li><a href=#scenario-1-multiple-batches>Scenario 1, Multiple Batches</a><ul><li><a href=#input-file>Input file</a></li><li><a href=#调用函数画图>调用函数画图</a></li><li><a href=#call-function-drawing>Call function drawing</a></li></ul></li><li><a href=#场景二多次生物学重复>场景二，多次生物学重复</a><ul><li><a href=#输入文件-1>输入文件</a></li></ul></li><li><a href=#scenario-2-multiple-biological-repetitions>Scenario 2: Multiple biological repetitions</a><ul><li><a href=#input-file-1>Input file</a></li><li><a href=#调用函数画图-1>调用函数画图</a></li><li><a href=#call-function-drawing-1>Call function drawing</a></li></ul></li></ul></nav></div></div><div class="content post__content clearfix"><div class="container-fluid main-container"><div id=header><h1 id=figureya101pca>FigureYa101PCA</h1><h4 id=xiaofan-lu-taojun-ye>Xiaofan Lu, Taojun Ye</h4><h4 id=2025-5-20>2025-5-20</h4></div><div id=academic-citation class="section level1"><h1 id=academic-citation>Academic Citation</h1><p>If you use this code in your work or research, we kindly request that you cite our publication:</p><p>Xiaofan Lu, et al. (2025). FigureYa: A Standardized Visualization Framework for Enhancing Biomedical Data Interpretation and Research Efficiency. iMetaMed. <a href=https://doi.org/10.1002/imm3.70005>https://doi.org/10.1002/imm3.70005</a></p><div id=需求描述 class="section level2"><h2 id=需求描述>需求描述</h2><p>RNA-seq的PCA图，同一组用相同颜色，多次重复（批次）用不同形状。我的分组很多，3次重复，不需要像FigureYa38PCA那样画圈画箭头。</p></div><div id=requirement-description class="section level2"><h2 id=requirement-description>Requirement description</h2><p>PCA plot of RNA seq, with the same color for the same group and different shapes for multiple repetitions (batches). I have many groups and repeat them three times, so I don’t need to draw circles or arrows like in FigureYa38PCA.</p><img src=example.png role=img><p>出自<a href=http://genesdev.cshlp.org/content/32/2/96>http://genesdev.cshlp.org/content/32/2/96</a></p><p>from<a href=http://genesdev.cshlp.org/content/32/2/96>http://genesdev.cshlp.org/content/32/2/96</a></p></div><div id=应用场景 class="section level2"><h2 id=应用场景>应用场景</h2><p>场景一：每个分组内的样品较多，是不同批次获得的。如果能用各种形状来区分批次的话，就能一眼看出哪个批次远离其他批次，有助于判断批次效应的影响。</p><p>场景二：每个分组内的样品是2到n次生物学重复获得的。如果能用各种形状来区分不同重复的话，就能一眼看出哪次重复远离其他重复，有助于判断去掉哪个离群样品。</p><p>如果想画圈和箭头，或者无法提供重复或批次batch的信息，请使用FigureYa38PCA。</p><p>不仅限于RNA-seq，同样适用于其他类型的数据。</p></div><div id=application-scenarios class="section level2"><h2 id=application-scenarios>Application scenarios</h2><p>Scenario 1: Each group has a large number of samples obtained from different batches. If various shapes can be used to distinguish batches, it can be seen at a glance which batch is far away from other batches, which helps to determine the impact of batch effects.</p><p>Scenario 2: The samples within each group are obtained from 2 to n biological replicates. If various shapes can be used to distinguish different repetitions, it can be seen at a glance which repetition is far away from other repetitions, which helps to determine which outlier sample to remove.</p><p>If you want to draw circles and arrows, or cannot provide information on duplicates or batches, please use FigureYa38PCA.</p><p>Not limited to RNA seq, it also applies to other types of data.</p></div><div id=环境设置 class="section level2"><h2 id=环境设置>环境设置</h2></div><div id=environment-settings class="section level2"><h2 id=environment-settings>Environment settings</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#a6e22e>source</span>(<span style=color:#e6db74>&#34;install_dependencies.R&#34;</span>)
+</span></span></code></pre></div><pre><code>## Starting R package installation...
+## ===========================================
+## 
+## Installing CRAN packages...
+## Package already installed: stringr 
+## 
+## Installing Bioconductor packages...
+## Package already installed: ClassDiscovery 
+## 
+## ===========================================
+## Package installation completed!
+## You can now run your R scripts in this directory.
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 加载stringr包，提供强大的字符串处理功能</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Load the stringr package, which provides powerful string processing functions</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>library</span>(stringr)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 设置系统环境，使R显示英文错误信息</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Set the system environment to display English error messages</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>Sys.setenv</span>(LANGUAGE <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;en&#34;</span>) 
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 全局选项设置：禁止将字符型变量自动转换为因子类型</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Global option setting: Prevent automatic conversion of character variables to factors</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>options</span>(stringsAsFactors <span style=color:#f92672>=</span> <span style=color:#66d9ef>FALSE</span>) 
+</span></span></code></pre></div></div><div id=自定义函数 class="section level2"><h2 id=自定义函数>自定义函数</h2><p>包括PCA分析过程以及出图，参数设置：</p><ul><li>indata 是一个矩阵，列为样本，行为观测</li><li>batch 是一个数据框，必须提供批次的信息，否则请使用FigureYa38PCA</li><li>batchvar 是批次的变量名，这里默认batch的列名</li><li>position 是最后出图时图例的位置，从以下位置中选择：“bottomright”, “bottom”, “bottomleft”, “left”, “topleft”, “top”, “topright”, “right” and “center”.</li><li>pch.original 是用于映射replicate形状的，默认从pch=16实心原点开始，到pch=25，一共10种实心图案可供映射，也可以自己选择pch形状起始点，参考：<a href=http://www.sthda.com/english/wiki/r-plot-pch-symbols-the-different-point-shapes-available-in-r>http://www.sthda.com/english/wiki/r-plot-pch-symbols-the-different-point-shapes-available-in-r</a></li><li>withoutgrid 是一个逻辑变量，指示是否要绘制背景网格（例文的图有网格，个人不推荐）</li><li>如果想输出样本ID，可以将showID设为TRUE，但样本量大的时候不推荐，图会看不清楚</li><li>其他参数可保持默认</li><li>函数细节可根据需要自己修改，比如batch的形状（pch参数）</li></ul></div><div id=custom-functions class="section level2"><h2 id=custom-functions>Custom functions</h2><p>Including PCA analysis process and plotting, parameter settings:</p><p>-Indata is a matrix with columns as samples and behavioral observations -Batch is a data box, and batch information must be provided. Otherwise, please use FigureYa38PCA -Batchvar is the variable name of the batch, which defaults to the column name of the batch -Position is the position of the legend when the final image is generated. Choose from the following positions: “bottomright”, “bottom”, “bottomleft”, “left”, “topleft”, “top”, “topright”, “right”, and “center” -PCH. Original is used to map replica shapes. By default, it starts from the solid origin at PCH=16 and ends at PCH=25. There are a total of 10 solid patterns available for mapping, or you can choose your own starting point for the PCH shape. Please refer to: <a href=http://www.sthda.com/english/wiki/r-plot-pch-symbols-the-different-point-shapes-available-in-r>http://www.sthda.com/english/wiki/r-plot-pch-symbols-the-different-point-shapes-available-in-r</a> -Withoutgrid is a logical variable that indicates whether to draw a background grid (the example image has a grid, which I personally do not recommend) -If you want to output the sample ID, you can set showID to TRUE, but it is not recommended when the sample size is large, as the image may not be clear -Other parameters can remain default -The details of the function can be modified as needed, such as the shape of the batch (pch parameter)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 功能：基于主成分分析(PCA)绘制批次效应图</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Function: Draw batch effect plot based on Principal Component Analysis (PCA)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 参数：</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># indata: 输入数据矩阵，行表示特征，列表示样本</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batch: 批次信息数据框</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batchvar: 批次变量名称，默认为批次数据框的列名</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># fig.dir: 图片输出目录</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># PCA.fig.title: PCA图的标题</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pos1: 第一个图例的位置，默认为&#34;bottomright&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pos2: 第二个图例的位置，默认为&#34;topright&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># xy: 要绘制的主成分，默认为前两个主成分</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pch.orginal: 原始点的形状，默认为16</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># cols: 自定义颜色，默认为NULL</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># showID: 是否显示样本ID，默认为FALSE</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># cex: 点的大小，默认为1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># showLegend: 是否显示图例，默认为TRUE</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batch1move: 第一个批次图例的移动距离，默认为0.3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batch2move: 第二个批次图例的移动距离，默认为0.4</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># width: 图片宽度，默认为5</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># height: 图片高度，默认为5</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># withoutgrid: 是否不带网格，默认为TRUE</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Parameters:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># indata: Input data matrix with features as rows and samples as columns</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batch: Data frame containing batch information</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batchvar: Names of batch variables, default to column names of batch data frame</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># fig.dir: Directory to save figures</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># PCA.fig.title: Title for the PCA plot</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pos1: Position of the first legend, default is &#34;bottomright&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pos2: Position of the second legend, default is &#34;topright&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># xy: Principal components to plot, default is the first two components</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># pch.orginal: Original point shape, default is 16</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># cols: Custom colors, default is NULL</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># showID: Whether to show sample IDs, default is FALSE</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># cex: Point size, default is 1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># showLegend: Whether to show legends, default is TRUE</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batch1move: Movement distance for the first batch legend, default is 0.3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># batch2move: Movement distance for the second batch legend, default is 0.4</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># width: Figure width, default is 5</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># height: Figure height, default is 5</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># withoutgrid: Whether to plot without grid, default is TRUE</span>
+</span></span><span style=display:flex><span>pca2batch <span style=color:#f92672>&lt;-</span> <span style=color:#66d9ef>function</span>(indata, batch, batchvar <span style=color:#f92672>=</span> <span style=color:#a6e22e>colnames</span>(batch), fig.dir, PCA.fig.title, pos1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bottomright&#34;</span>, pos2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;topright&#34;</span>, xy<span style=color:#f92672>=</span><span style=color:#a6e22e>c</span>(<span style=color:#ae81ff>1</span>,<span style=color:#ae81ff>2</span>), pch.orginal<span style=color:#f92672>=</span><span style=color:#ae81ff>16</span>, cols<span style=color:#f92672>=</span><span style=color:#66d9ef>NULL</span>, showID<span style=color:#f92672>=</span><span style=color:#66d9ef>FALSE</span>, cex<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, showLegend<span style=color:#f92672>=</span>T, batch1move<span style=color:#f92672>=</span><span style=color:#ae81ff>0.3</span>, batch2move<span style=color:#f92672>=</span><span style=color:#ae81ff>0.4</span>, width<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>, height<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>, withoutgrid<span style=color:#f92672>=</span><span style=color:#66d9ef>TRUE</span>) {
+</span></span><span style=display:flex><span> 
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 加载ClassDiscovery包，用于PCA分析</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Load the ClassDiscovery package for PCA analysis</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>library</span>(ClassDiscovery) 
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 计算第一个批次变量的水平数</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Calculate the number of levels for the first batch variable</span>
+</span></span><span style=display:flex><span>  N.batch1 <span style=color:#f92672>=</span> <span style=color:#a6e22e>length</span>(<span style=color:#a6e22e>unique</span>(batch[,batchvar[1]]))    
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 计算第二个批次变量的水平数</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Calculate the number of levels for the second batch variable</span>
+</span></span><span style=display:flex><span>  N.batch2 <span style=color:#f92672>=</span> <span style=color:#a6e22e>length</span>(<span style=color:#a6e22e>unique</span>(batch[,batchvar[2]]))    
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 检查是否提供了自定义颜色</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Check if custom colors are provided</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>is.null</span>(cols)) { 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 如果没有，使用彩虹色</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># If not, use rainbow colors</span>
+</span></span><span style=display:flex><span>    cols <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>rainbow</span>(N.batch1) 
+</span></span><span style=display:flex><span>  }<span style=color:#66d9ef>else</span>{
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 检查颜色数量是否与批次数量匹配</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Check if the number of colors matches the number of batches</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>length</span>(cols) <span style=color:#f92672>!=</span> N.batch1) {<span style=color:#a6e22e>stop</span>(<span style=color:#e6db74>&#34;cols length not equal to batch length&#34;</span>)} 
+</span></span><span style=display:flex><span>  }           
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 移除数据中的缺失值</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Remove missing values from the data</span>
+</span></span><span style=display:flex><span>  indata<span style=color:#f92672>=</span><span style=color:#a6e22e>na.omit</span>(indata)
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 执行PCA分析，不进行标准化</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Perform PCA analysis without standardization</span>
+</span></span><span style=display:flex><span>  pca <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>SamplePCA</span>(indata, usecor<span style=color:#f92672>=</span>F, center<span style=color:#f92672>=</span>F) 
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 计算第一个主成分的方差解释比例</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Calculate the variance explained by the first principal component</span>
+</span></span><span style=display:flex><span>  pct1 <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>round </span>(pca<span style=color:#f92672>@</span>variances[xy[1]]<span style=color:#f92672>/</span><span style=color:#a6e22e>sum</span>(pca<span style=color:#f92672>@</span>variances), digits<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)<span style=color:#f92672>*</span><span style=color:#ae81ff>100</span> 
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 计算第二个主成分的方差解释比例</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Calculate the variance explained by the second principal component</span>
+</span></span><span style=display:flex><span>  pct2 <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>round </span>(pca<span style=color:#f92672>@</span>variances[xy[2]]<span style=color:#f92672>/</span><span style=color:#a6e22e>sum</span>(pca<span style=color:#f92672>@</span>variances), digits<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>)<span style=color:#f92672>*</span><span style=color:#ae81ff>100</span> 
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 设置X轴标签文本</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Set X-axis label text</span>
+</span></span><span style=display:flex><span>  xlab.text <span style=color:#f92672>=</span> <span style=color:#a6e22e>paste</span>(<span style=color:#e6db74>&#34;PC&#34;</span>, xy[1], <span style=color:#e6db74>&#34;: &#34;</span>, <span style=color:#a6e22e>as.character</span>(pct1), <span style=color:#e6db74>&#34;% variance&#34;</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 设置Y轴标签文本</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Set Y-axis label text</span>
+</span></span><span style=display:flex><span>  ylab.text <span style=color:#f92672>=</span> <span style=color:#a6e22e>paste</span>(<span style=color:#e6db74>&#34;PC&#34;</span>, xy[2], <span style=color:#e6db74>&#34;: &#34;</span>, <span style=color:#a6e22e>as.character</span>(pct2), <span style=color:#e6db74>&#34;% variance&#34;</span>, sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>)
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 根据是否需要网格绘制不同的图形</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Draw different plots based on whether grid is needed</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(withoutgrid) {
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 设置不带网格的输出文件名</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Set output file name without grid</span>
+</span></span><span style=display:flex><span>    outfile <span style=color:#f92672>=</span> <span style=color:#a6e22e>file.path</span>(fig.dir, <span style=color:#a6e22e>paste</span>(PCA.fig.title, <span style=color:#e6db74>&#34;.withoutgrid.pdf&#34;</span>,sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>)) 
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 创建PDF设备</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Create PDF device</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pdf</span>(file<span style=color:#f92672>=</span>outfile, width <span style=color:#f92672>=</span> width, height <span style=color:#f92672>=</span> height)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 调整图形边距，为图例留出空间</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Adjust plot margins to make space for legends</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>par</span>(mar <span style=color:#f92672>=</span> <span style=color:#a6e22e>par</span>()<span style=color:#f92672>$</span>mar <span style=color:#f92672>+</span> <span style=color:#a6e22e>c</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>6</span>)) 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 绘制PCA散点图</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Plot PCA scatter plot</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>plot</span>(pca<span style=color:#f92672>@</span>scores[,xy[1]], pca<span style=color:#f92672>@</span>scores[,xy[2]], 
+</span></span><span style=display:flex><span>         cex<span style=color:#f92672>=</span>cex, xlab<span style=color:#f92672>=</span>xlab.text, ylab<span style=color:#f92672>=</span>ylab.text,
+</span></span><span style=display:flex><span>         col<span style=color:#f92672>=</span>cols<span style=color:#a6e22e>[factor</span>(batch[,batchvar[1]])], 
+</span></span><span style=display:flex><span>         pch<span style=color:#f92672>=</span>(pch.orginal<span style=color:#f92672>:</span>(pch.orginal<span style=color:#ae81ff>-1</span><span style=color:#f92672>+</span>N.batch2))<span style=color:#a6e22e>[factor</span>(batch[,batchvar[2]])])
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 添加水平和垂直参考线</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Add horizontal and vertical reference lines</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>abline</span>(h<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, v<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>, col<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;brown&#34;</span>, lty<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>  } <span style=color:#66d9ef>else</span> {
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 设置带网格的输出文件名</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Set output file name with grid</span>
+</span></span><span style=display:flex><span>    outfile <span style=color:#f92672>=</span> <span style=color:#a6e22e>file.path</span>(fig.dir, <span style=color:#a6e22e>paste</span>(PCA.fig.title, <span style=color:#e6db74>&#34;.withgrid.pdf&#34;</span>,sep<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;&#34;</span>)) 
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 保存到PDF文件</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Save to PDF file</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>pdf</span>(file<span style=color:#f92672>=</span>outfile, width <span style=color:#f92672>=</span> width, height <span style=color:#f92672>=</span> height)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 调整图形边距，为图例留出空间</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Adjust plot margins to make space for legends</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>par</span>(mar <span style=color:#f92672>=</span> <span style=color:#a6e22e>par</span>()<span style=color:#f92672>$</span>mar <span style=color:#f92672>+</span> <span style=color:#a6e22e>c</span>(<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>0</span>,<span style=color:#ae81ff>6</span>)) 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 先绘制一次固定视窗</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Plot once to fix the viewport</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>plot</span>(pca<span style=color:#f92672>@</span>scores[,xy[1]], pca<span style=color:#f92672>@</span>scores[,xy[2]], 
+</span></span><span style=display:flex><span>         cex<span style=color:#f92672>=</span>cex, xlab<span style=color:#f92672>=</span>xlab.text, ylab<span style=color:#f92672>=</span>ylab.text,
+</span></span><span style=display:flex><span>         col<span style=color:#f92672>=</span>cols<span style=color:#a6e22e>[factor</span>(batch[,batchvar[1]])], 
+</span></span><span style=display:flex><span>         pch<span style=color:#f92672>=</span>(pch.orginal<span style=color:#f92672>:</span>(pch.orginal<span style=color:#ae81ff>-1</span><span style=color:#f92672>+</span>N.batch2))<span style=color:#a6e22e>[factor</span>(batch[,batchvar[2]])])
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 添加灰色背景</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Add gray background</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>rect</span>(<span style=color:#a6e22e>par</span>(<span style=color:#e6db74>&#34;usr&#34;</span>)[1],<span style=color:#a6e22e>par</span>(<span style=color:#e6db74>&#34;usr&#34;</span>)[3],<span style=color:#a6e22e>par</span>(<span style=color:#e6db74>&#34;usr&#34;</span>)[2],<span style=color:#a6e22e>par</span>(<span style=color:#e6db74>&#34;usr&#34;</span>)[4],col <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;gray80&#34;</span>) 
+</span></span><span style=display:flex><span>    
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 再画一次覆盖灰色背景</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Plot again to cover the gray background</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>par</span>(new<span style=color:#f92672>=</span><span style=color:#66d9ef>TRUE</span>)
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>plot</span>(pca<span style=color:#f92672>@</span>scores[,xy[1]], pca<span style=color:#f92672>@</span>scores[,xy[2]], 
+</span></span><span style=display:flex><span>         cex<span style=color:#f92672>=</span>cex, xlab<span style=color:#f92672>=</span>xlab.text, ylab<span style=color:#f92672>=</span>ylab.text,
+</span></span><span style=display:flex><span>         col<span style=color:#f92672>=</span>cols<span style=color:#a6e22e>[factor</span>(batch[,batchvar[1]])], 
+</span></span><span style=display:flex><span>         pch<span style=color:#f92672>=</span>(pch.orginal<span style=color:#f92672>:</span>(pch.orginal<span style=color:#ae81ff>-1</span><span style=color:#f92672>+</span>N.batch2))<span style=color:#a6e22e>[factor</span>(batch[,batchvar[2]])])
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 添加白色网格线</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Add white grid lines</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>grid </span>(lty <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>, col <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;white&#34;</span>,lwd<span style=color:#f92672>=</span><span style=color:#ae81ff>2</span>)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 如果showID为TRUE，则在图上显示样本ID</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># If showID is TRUE, display sample IDs on the plot</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> (showID) { 
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>text</span>(pca<span style=color:#f92672>@</span>scores[,xy[1]], pca<span style=color:#f92672>@</span>scores[,xy[2]], <span style=color:#a6e22e>colnames</span>(indata), lwd<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>, cex<span style=color:#f92672>=</span>cex)
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 如果showLegend为TRUE，则添加图例</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># If showLegend is TRUE, add legends</span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span>(showLegend){ 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 允许图形绘制超出边界</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Allow plotting outside the plot area</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>par</span>(xpd <span style=color:#f92672>=</span> <span style=color:#66d9ef>TRUE</span>) 
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 添加第一个图例（批次1）</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Add the first legend (batch 1)</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>legend</span>(pos1,fill <span style=color:#f92672>=</span> cols,
+</span></span><span style=display:flex><span>           legend<span style=color:#f92672>=</span><span style=color:#a6e22e>names</span>(<span style=color:#a6e22e>table</span>(<span style=color:#a6e22e>factor</span>(batch[,batchvar[1]]))),
+</span></span><span style=display:flex><span>           inset<span style=color:#f92672>=</span><span style=color:#a6e22e>c</span>(<span style=color:#f92672>-</span>batch1move,<span style=color:#ae81ff>0</span>), 
+</span></span><span style=display:flex><span>           border <span style=color:#f92672>=</span> <span style=color:#66d9ef>NA</span>,bty <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;n&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># 添加第二个图例（批次2）</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Add the second legend (batch 2)</span>
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>legend</span>(pos2,legend<span style=color:#f92672>=</span><span style=color:#a6e22e>names</span>(<span style=color:#a6e22e>table</span>(<span style=color:#a6e22e>factor</span>(batch[,batchvar[2]]))),
+</span></span><span style=display:flex><span>           border <span style=color:#f92672>=</span> <span style=color:#66d9ef>NA</span>,bty <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;n&#34;</span>,
+</span></span><span style=display:flex><span>           inset<span style=color:#f92672>=</span><span style=color:#a6e22e>c</span>(<span style=color:#f92672>-</span>batch2move,<span style=color:#ae81ff>0</span>), 
+</span></span><span style=display:flex><span>           pch <span style=color:#f92672>=</span> (pch.orginal<span style=color:#f92672>:</span>(pch.orginal<span style=color:#ae81ff>-1</span><span style=color:#f92672>+</span>N.batch2)))
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#75715e># 关闭图形设备</span>
+</span></span><span style=display:flex><span>  <span style=color:#75715e># Close the graphics device</span>
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>invisible</span>(<span style=color:#a6e22e>dev.off</span>())
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>下面根据场景举两个列子，便于小伙伴儿模仿。</p><p>Below are two columns based on the scene for easy imitation by friends.</p></div><div id=场景一多个批次 class="section level2"><h2 id=场景一多个批次>场景一，多个批次</h2><div id=输入文件 class="section level3"><h3 id=输入文件>输入文件</h3><p>需要两个输入文件：</p><ul><li><p>easy_input_expr.csv，表达矩阵，包含多个基因在多个样本中的表达量。</p></li><li><p>easy_input_batch.csv，样品信息，第一列样品名，跟表达矩阵一致；后面两列是分组（batch1）和批次（batch2）。</p></li></ul></div></div><div id=scenario-1-multiple-batches class="section level2"><h2 id=scenario-1-multiple-batches>Scenario 1, Multiple Batches</h2><div id=input-file class="section level3"><h3 id=input-file>Input file</h3><p>Two input files are required:</p><ul><li><p>easy_input_expr.csv， Expression matrix, containing the expression levels of multiple genes in multiple samples.</p></li><li><p>easy_input_batch.csv， Sample information, first column sample name, consistent with the expression matrix; The last two columns are grouping (batch1) and batch (batch2).</p></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 读取表达矩阵数据</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Read expression matrix data</span>
+</span></span><span style=display:flex><span>df <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>read.csv</span>(<span style=color:#e6db74>&#34;easy_input_expr.csv&#34;</span>,header <span style=color:#f92672>=</span> T,row.names <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>,check.names <span style=color:#f92672>=</span> F, stringsAsFactors <span style=color:#f92672>=</span> F)
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看表达矩阵前3行3列的数据</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View the first 3 rows and 3 columns of the expression matrix</span>
+</span></span><span style=display:flex><span>df[1<span style=color:#f92672>:</span><span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>1</span><span style=color:#f92672>:</span><span style=color:#ae81ff>3</span>]
+</span></span></code></pre></div><pre><code>##             P1        P2       P3
+## GATA3 2.870500 2.1662500 1.323500
+## PTEN  1.361357 0.4283571 1.305643
+## XBP1  2.983333 2.5508333 3.020417
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 读取样本批次信息</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Read sample batch information</span>
+</span></span><span style=display:flex><span>batch <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>read.csv</span>(<span style=color:#e6db74>&#34;easy_input_batch.csv&#34;</span>,header <span style=color:#f92672>=</span> T, row.names <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>, check.names <span style=color:#f92672>=</span> F,stringsAsFactors <span style=color:#f92672>=</span> F)
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看批次信息前几行</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View the first few rows of the batch information</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>head</span>(batch)
+</span></span></code></pre></div><pre><code>##    batch1      batch2
+## P1  pro-B Replicate 1
+## P2  pro-B Replicate 1
+## P3  pro-B Replicate 1
+## P4  pro-B Replicate 1
+## P5  pro-B Replicate 1
+## P6  pro-B Replicate 1
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 根据需要决定是否进行标准化处理</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Decide whether to perform standardization according to your needs</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 注意：scale函数默认对列进行操作，因此需要两次转置</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Note: The scale function operates on columns by default, so two transpositions are needed</span>
+</span></span><span style=display:flex><span>indata <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>as.data.frame</span>(<span style=color:#a6e22e>t</span>(<span style=color:#a6e22e>scale</span>(<span style=color:#a6e22e>t</span>(df),center <span style=color:#f92672>=</span> T,scale <span style=color:#f92672>=</span> T)))
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看标准化后的数据前3行3列</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View the first 3 rows and 3 columns of the standardized data</span>
+</span></span><span style=display:flex><span>indata[1<span style=color:#f92672>:</span><span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>1</span><span style=color:#f92672>:</span><span style=color:#ae81ff>3</span>]
+</span></span></code></pre></div><pre><code>##             P1         P2        P3
+## GATA3 1.580288  1.3400025 1.0524621
+## PTEN  1.008966 -0.2509995 0.9337272
+## XBP1  1.490230  1.2425112 1.5114696
+</code></pre></div><div id=调用函数画图 class="section level3"><h3 id=调用函数画图>调用函数画图</h3></div><div id=call-function-drawing class="section level3"><h3 id=call-function-drawing>Call function drawing</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 自定义颜色</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define custom colors</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 定义足够多的颜色，用于展示分组</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define enough colors to display different groups</span>
+</span></span><span style=display:flex><span>mycol <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;#223D6C&#34;</span>,<span style=color:#e6db74>&#34;#D20A13&#34;</span>,<span style=color:#e6db74>&#34;#088247&#34;</span>,<span style=color:#e6db74>&#34;#FFD121&#34;</span>,<span style=color:#e6db74>&#34;#11AA4D&#34;</span>,<span style=color:#e6db74>&#34;#58CDD9&#34;</span>,<span style=color:#e6db74>&#34;#7A142C&#34;</span>,<span style=color:#e6db74>&#34;#5D90BA&#34;</span>,<span style=color:#e6db74>&#34;#431A3D&#34;</span>,<span style=color:#e6db74>&#34;#91612D&#34;</span>,<span style=color:#e6db74>&#34;#6E568C&#34;</span>,<span style=color:#e6db74>&#34;#E0367A&#34;</span>,<span style=color:#e6db74>&#34;#D8D155&#34;</span>,<span style=color:#e6db74>&#34;#64495D&#34;</span>,<span style=color:#e6db74>&#34;#7CC767&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 直接出图 - 带网格背景的PCA图</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate PCA plot directly - with grid background</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>pca2batch</span>(
+</span></span><span style=display:flex><span>  indata <span style=color:#f92672>=</span> indata[, <span style=color:#a6e22e>rownames</span>(batch)],  <span style=color:#75715e># 使用匹配批次信息的表达数据 / Use expression data matching batch info</span>
+</span></span><span style=display:flex><span>  batch <span style=color:#f92672>=</span> batch,                      <span style=color:#75715e># 批次信息数据框 / Batch information data frame</span>
+</span></span><span style=display:flex><span>  fig.dir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;.&#34;</span>,                      <span style=color:#75715e># 保存在当前文件夹 / Save in current directory</span>
+</span></span><span style=display:flex><span>  PCA.fig.title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;PCA.2batches&#34;</span>,     <span style=color:#75715e># PCA图标题 / PCA plot title</span>
+</span></span><span style=display:flex><span>  cols <span style=color:#f92672>=</span> mycol[1<span style=color:#f92672>:</span><span style=color:#a6e22e>length</span>(<span style=color:#a6e22e>unique</span>(batch<span style=color:#f92672>$</span>batch1))],  <span style=color:#75715e># 使用自定义颜色 / Use custom colors</span>
+</span></span><span style=display:flex><span>  showID <span style=color:#f92672>=</span> F,                         <span style=color:#75715e># 不显示样本ID / Do not show sample IDs</span>
+</span></span><span style=display:flex><span>  cex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.8</span>,                          <span style=color:#75715e># 点的大小 / Point size</span>
+</span></span><span style=display:flex><span>  showLegend <span style=color:#f92672>=</span> T,                     <span style=color:#75715e># 显示图例 / Show legend</span>
+</span></span><span style=display:flex><span>  width <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>,              <span style=color:#75715e># 图片宽高 / Image dimensions (width, height)</span>
+</span></span><span style=display:flex><span>  pos1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bottomright&#34;</span>, pos2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;topright&#34;</span>, <span style=color:#75715e># 图例位置 / Legend positions</span>
+</span></span><span style=display:flex><span>  withoutgrid <span style=color:#f92672>=</span> F                     <span style=color:#75715e># 有网格背景（示例） / With grid background (example)</span>
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><pre><code>## Loading required package: cluster
+
+## Loading required package: oompaBase
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 直接出图 - 不带网格背景的PCA图</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate PCA plot directly - without grid background</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>pca2batch</span>(
+</span></span><span style=display:flex><span>  indata <span style=color:#f92672>=</span> indata[, <span style=color:#a6e22e>rownames</span>(batch)],  <span style=color:#75715e># 使用匹配批次信息的表达数据 / Use expression data matching batch info</span>
+</span></span><span style=display:flex><span>  batch <span style=color:#f92672>=</span> batch,                      <span style=color:#75715e># 批次信息数据框 / Batch information data frame</span>
+</span></span><span style=display:flex><span>  fig.dir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;.&#34;</span>,                      <span style=color:#75715e># 保存在当前文件夹 / Save in current directory</span>
+</span></span><span style=display:flex><span>  PCA.fig.title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;PCA.2batches&#34;</span>,     <span style=color:#75715e># PCA图标题 / PCA plot title</span>
+</span></span><span style=display:flex><span>  cols <span style=color:#f92672>=</span> mycol[1<span style=color:#f92672>:</span><span style=color:#a6e22e>length</span>(<span style=color:#a6e22e>unique</span>(batch<span style=color:#f92672>$</span>batch1))],  <span style=color:#75715e># 使用自定义颜色 / Use custom colors</span>
+</span></span><span style=display:flex><span>  showID <span style=color:#f92672>=</span> F,                         <span style=color:#75715e># 不显示样本ID / Do not show sample IDs</span>
+</span></span><span style=display:flex><span>  cex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.8</span>,                          <span style=color:#75715e># 点的大小 / Point size</span>
+</span></span><span style=display:flex><span>  showLegend <span style=color:#f92672>=</span> T,                     <span style=color:#75715e># 显示图例 / Show legend</span>
+</span></span><span style=display:flex><span>  width <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>,              <span style=color:#75715e># 图片宽高 / Image dimensions (width, height)</span>
+</span></span><span style=display:flex><span>  pos1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bottomright&#34;</span>, pos2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;topright&#34;</span>, <span style=color:#75715e># 图例位置 / Legend positions</span>
+</span></span><span style=display:flex><span>  withoutgrid <span style=color:#f92672>=</span> T                     <span style=color:#75715e># 无网格背景（推荐） / No grid background (recommended)</span>
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div></div></div><div id=场景二多次生物学重复 class="section level2"><h2 id=场景二多次生物学重复>场景二，多次生物学重复</h2><div id=输入文件-1 class="section level3"><h3 id=输入文件-1>输入文件</h3><ul><li><p>GSE125184_CCAB_RPKM_ExpMatrix.csv，基因表达矩阵，行为基因，列为sample。下载自<a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125184">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125184</a>，解压缩，跟FigureYa98STEMheatmap是同一套输入数据。</p></li><li><p>easy_input_meta.csv，样品信息，包括分组condition和重复的批次（batch）。</p></li></ul></div></div><div id=scenario-2-multiple-biological-repetitions class="section level2"><h2 id=scenario-2-multiple-biological-repetitions>Scenario 2: Multiple biological repetitions</h2><div id=input-file-1 class="section level3"><h3 id=input-file-1>Input file</h3><ul><li><p>GSE125184_CCAB_RPKM_ExpMatrix.csv， Gene expression matrix, behavioral genes, listed as samples. Download from&lt; <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125184">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125184</a> >Decompress, it is the same set of input data as FigureYa98STEMheatmap.</p></li><li><p>easy_input_meta.csv， Sample information, including grouping conditions and repeated batches.</p></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e>## 表达矩阵</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 读取表达矩阵数据，文件名为&#34;GSE125184_CCAB_RPKM_ExpMatrix.csv&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># check.names=F表示不检查列名的有效性，row.names=1表示第一列作为行名</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Read the expression matrix data from &#34;GSE125184_CCAB_RPKM_ExpMatrix.csv&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># check.names=F means do not check the validity of column names, row.names=1 means use the first column as row names</span>
+</span></span><span style=display:flex><span>expr <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>read.csv</span>(<span style=color:#e6db74>&#34;GSE125184_CCAB_RPKM_ExpMatrix.csv.gz&#34;</span>, check.names <span style=color:#f92672>=</span> F, row.names <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看表达矩阵前3行3列的数据</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View the first 3 rows and 3 columns of the expression matrix</span>
+</span></span><span style=display:flex><span>expr[1<span style=color:#f92672>:</span><span style=color:#ae81ff>3</span>,<span style=color:#ae81ff>1</span><span style=color:#f92672>:</span><span style=color:#ae81ff>3</span>]
+</span></span></code></pre></div><pre><code>##                             CC_FB_CL_R1 CC_FB_CL_R2 CC_FB_CL_R3
+## jgi|Copci_AmutBmut1|10000|     5.998219    7.014836    6.823547
+## jgi|Copci_AmutBmut1|100137|    9.454278    9.151547    9.437245
+## jgi|Copci_AmutBmut1|100210|    1.323965    1.271441    1.215592
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e>## 样品信息</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 读取样本元数据，文件名为&#34;easy_input_meta.csv&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># header=T表示第一行是列名，row.names=1表示第一列作为行名</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Read the sample metadata from &#34;easy_input_meta.csv&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># header=T means the first row contains column names, row.names=1 means use the first column as row names</span>
+</span></span><span style=display:flex><span>metadata <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>read.csv</span>(<span style=color:#e6db74>&#34;easy_input_meta.csv&#34;</span>, header <span style=color:#f92672>=</span> T, row.names <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>)
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看元数据的前几行</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># View the first few rows of the metadata</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>head</span>(metadata)
+</span></span></code></pre></div><pre><code>##             condition       batch
+## CC_FB_CL_R1     FB-CL Replicate 1
+## CC_FB_CL_R2     FB-CL Replicate 2
+## CC_FB_CL_R3     FB-CL Replicate 3
+## CC_FB_S_R1       FB-S Replicate 1
+## CC_FB_S_R2       FB-S Replicate 2
+## CC_FB_S_R3       FB-S Replicate 3
+</code></pre><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 默认图例会根据分组名字按字母排序</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># By default, the legend will be sorted alphabetically by group names</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 下面按照自己想要的顺序排序</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sort the groups in a custom order as follows</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 将metadata数据框中的condition列转换为因子类型，并指定因子水平的顺序</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Convert the &#39;condition&#39; column in the metadata data frame to a factor, </span>
+</span></span><span style=display:flex><span><span style=color:#75715e># and specify the order of the factor levels</span>
+</span></span><span style=display:flex><span>metadata<span style=color:#f92672>$</span>condition <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>factor</span>(metadata<span style=color:#f92672>$</span>condition, levels <span style=color:#f92672>=</span> <span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;VM&#34;</span>, <span style=color:#e6db74>&#34;H&#34;</span>, <span style=color:#e6db74>&#34;P1&#34;</span>, <span style=color:#e6db74>&#34;P2&#34;</span>, <span style=color:#e6db74>&#34;YFB-S&#34;</span>, <span style=color:#e6db74>&#34;YFB-C&#34;</span>, <span style=color:#e6db74>&#34;YFB-L&#34;</span>, <span style=color:#e6db74>&#34;FB-S&#34;</span>, <span style=color:#e6db74>&#34;FB-CL&#34;</span>))
+</span></span></code></pre></div></div><div id=调用函数画图-1 class="section level3"><h3 id=调用函数画图-1>调用函数画图</h3></div><div id=call-function-drawing-1 class="section level3"><h3 id=call-function-drawing-1>Call function drawing</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#75715e># 定义足够多的颜色，用于展示分组</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Define sufficient colors for displaying different groups</span>
+</span></span><span style=display:flex><span>mycol <span style=color:#f92672>&lt;-</span> <span style=color:#a6e22e>c</span>(<span style=color:#e6db74>&#34;#223D6C&#34;</span>,<span style=color:#e6db74>&#34;#D20A13&#34;</span>,<span style=color:#e6db74>&#34;#088247&#34;</span>,<span style=color:#e6db74>&#34;#FFD121&#34;</span>,<span style=color:#e6db74>&#34;#11AA4D&#34;</span>,<span style=color:#e6db74>&#34;#58CDD9&#34;</span>,<span style=color:#e6db74>&#34;#7A142C&#34;</span>,<span style=color:#e6db74>&#34;#5D90BA&#34;</span>,<span style=color:#e6db74>&#34;#431A3D&#34;</span>,<span style=color:#e6db74>&#34;#91612D&#34;</span>,<span style=color:#e6db74>&#34;#6E568C&#34;</span>,<span style=color:#e6db74>&#34;#E0367A&#34;</span>,<span style=color:#e6db74>&#34;#D8D155&#34;</span>,<span style=color:#e6db74>&#34;#64495D&#34;</span>,<span style=color:#e6db74>&#34;#7CC767&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 直接出图</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Directly generate PCA plot</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>pca2batch</span>(
+</span></span><span style=display:flex><span>  indata <span style=color:#f92672>=</span> expr[, <span style=color:#a6e22e>rownames</span>(metadata)],  <span style=color:#75715e># 表达矩阵，选取与metadata匹配的样本 / Expression matrix, select samples matching metadata</span>
+</span></span><span style=display:flex><span>  batch <span style=color:#f92672>=</span> metadata,  <span style=color:#75715e># 样品信息数据框 / Sample metadata data frame</span>
+</span></span><span style=display:flex><span>  pch.orginal <span style=color:#f92672>=</span> <span style=color:#ae81ff>15</span>,  <span style=color:#75715e># 起始点形状为15（正方形） / Starting point shape (15 = square)</span>
+</span></span><span style=display:flex><span>  fig.dir <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;.&#34;</span>,  <span style=color:#75715e># 图片保存路径为当前目录 / Save figures to current directory</span>
+</span></span><span style=display:flex><span>  PCA.fig.title <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;PCA.replicates&#34;</span>,  <span style=color:#75715e># PCA图标题 / PCA plot title</span>
+</span></span><span style=display:flex><span>  cols <span style=color:#f92672>=</span> mycol[1<span style=color:#f92672>:</span><span style=color:#a6e22e>length</span>(<span style=color:#a6e22e>unique</span>(metadata<span style=color:#f92672>$</span>condition))],  <span style=color:#75715e># 为不同条件分配颜色 / Assign colors to different conditions</span>
+</span></span><span style=display:flex><span>  showID <span style=color:#f92672>=</span> F,  <span style=color:#75715e># 是否显示样本ID（如需显示则改为T） / Show sample IDs (change to T to display)</span>
+</span></span><span style=display:flex><span>  cex <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.8</span>,  <span style=color:#75715e># 点和文字大小 / Point and text size</span>
+</span></span><span style=display:flex><span>  showLegend <span style=color:#f92672>=</span> T,  <span style=color:#75715e># 是否显示图例 / Show legend</span>
+</span></span><span style=display:flex><span>  width <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span>, height <span style=color:#f92672>=</span> <span style=color:#ae81ff>5</span>,  <span style=color:#75715e># 图片宽高（英寸） / Figure dimensions (inches)</span>
+</span></span><span style=display:flex><span>  batch1move <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.3</span>,  <span style=color:#75715e># 微调第一个图例的位置 / Fine-tune position of first legend</span>
+</span></span><span style=display:flex><span>  batch2move <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.36</span>,  <span style=color:#75715e># 微调第二个图例的位置 / Fine-tune position of second legend</span>
+</span></span><span style=display:flex><span>  pos1 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;topright&#34;</span>, pos2 <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;bottomright&#34;</span>,  <span style=color:#75715e># 两个图例的位置 / Positions of two legends</span>
+</span></span><span style=display:flex><span>  withoutgrid <span style=color:#f92672>=</span> T  <span style=color:#75715e># 无网格背景（推荐设置） / No grid background (recommended)</span>
+</span></span><span style=display:flex><span>)
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-r data-lang=r><span style=display:flex><span><span style=color:#a6e22e>sessionInfo</span>()
+</span></span></code></pre></div><pre><code>## R version 4.4.1 (2024-06-14)
+## Platform: aarch64-apple-darwin20
+## Running under: macOS 15.4.1
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## time zone: Asia/Shanghai
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] ClassDiscovery_3.4.8 oompaBase_3.2.10     cluster_2.1.8.1     
+## [4] stringr_1.5.1       
+## 
+## loaded via a namespace (and not attached):
+##  [1] digest_0.6.37     R6_2.6.1          fastmap_1.2.0     xfun_0.52        
+##  [5] magrittr_2.0.3    mclust_6.1.1      glue_1.8.0        cachem_1.1.0     
+##  [9] knitr_1.50        htmltools_0.5.8.1 rmarkdown_2.29    lifecycle_1.0.4  
+## [13] cli_3.6.5         oompaData_3.1.5   sass_0.4.10       jquerylib_0.1.4  
+## [17] compiler_4.4.1    rstudioapi_0.17.1 tools_4.4.1       evaluate_1.0.4   
+## [21] bslib_0.9.0       yaml_2.3.10       rlang_1.1.6       jsonlite_2.0.0   
+## [25] stringi_1.8.7
+</code></pre></div></div></div></div><hr><div style=display:flex;justify-content:space-between;align-items:center;margin-top:20px><div style=text-align:left><a href=https://github.com/ying-ge/FigureYa target=_blank>原文链接</a></div><div style=text-align:right><a href=https://kyplus.de target=_blank>关注科研普拉斯</a> |
+<a href=https://kyplus.de target=_blank>订阅ChatGPT</a></div></div></div><footer class=post__footer><div class="post__tags tags clearfix"><svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M4 0h8s2 0 4 2l15 15s2 2 0 4L21 31s-2 2-4 0L2 16s-2-2-2-4V3s0-3 4-3m3 10a3 3 0 000-6 3 3 0 000 6"/></svg><ul class=tags__list><li class=tags__item><a class="tags__link btn" href=../../../../tags/r/ rel=tag>R</a></li><li class=tags__item><a class="tags__link btn" href=../../../../tags/plot/ rel=tag>Plot</a></li></ul></div></footer></article></main><div class="authorbox clearfix"><div class=authorbox__header><span class=authorbox__name>About Bloger</span></div></div><nav class="pager flex"><div class="pager__item pager__item--prev"><a class=pager__link href=../../../../posts/figureya/figureya1survivalcurve_update/ rel=prev><span class=pager__subtitle>«&#8201;Previous</span><p class=pager__title>FigureYa1SurvivalCurve_update</p></a></div></nav><section class=comments><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//kkitown.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}()</script><noscript>Please enable JavaScript to view the <a href=https://disqus.com/?ref_noscript>comments powered by Disqus.</a></noscript><a href=https://disqus.com class=dsq-brlink>comments powered by <span class=logo-disqus>Disqus</span></a></section></div><aside class=sidebar><div class="widget-search widget"><form class=widget-search__form role=search method=get action=https://google.com/search><input class=widget-search__field type=search placeholder=Search… name=q aria-label=Search…>
+<input class=widget-search__submit type=submit value=Search>
+<input type=hidden name=sitesearch value=https://ixxmu.github.io/></form></div><div class="widget-recent widget"><h4 class=widget__title>Recent Posts</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=../../../../posts/figureya/figureya101pca/figureya101pca/>FigureYa101PCA</a></li><li class=widget__item><a class=widget__link href=../../../../posts/figureya/figureya1survivalcurve_update/>FigureYa1SurvivalCurve_update</a></li></ul></div></div><div class="widget-categories widget"><h4 class=widget__title>Categories</h4><div class=widget__content><ul class=widget__list><li class=widget__item><a class=widget__link href=../../../../categories/learnr/>LearnR</a></li></ul></div></div><div class="widget-taglist widget"><h4 class=widget__title>Tags</h4><div class=widget__content></div><a href=../../../../tags/></a></div><div class="widget-social widget"><h4 class="widget-social__title widget__title">Social</h4><div class="widget-social__content widget__content"><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Facebook rel="noopener noreferrer" href=https://facebook.com/username target=_blank><svg class="widget-social__link-icon icon icon-facebook" width="24" height="24" viewBox="0 0 352 352"><path d="m0 32v288c0 17.5 14.5 32 32 32h288c17.5.0 32-14.5 32-32V32c0-17.5-14.5-32-32-32H32C14.5.0.0 14.5.0 32zm320 0v288h-83V212h41.5l6-48H237v-31c0-14 3.5-23.5 23.5-23.5h26V66c-4.4-.6-19.8-1.5-37.5-1.5-36.9.0-62 22.2-62 63.5v36h-42v48h42v108H32V32z"/></svg>
+<span>Facebook</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Twitter rel="noopener noreferrer" href=https://twitter.com/username target=_blank><svg class="widget-social__link-icon icon icon-twitter" width="24" height="24" viewBox="0 0 384 312"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5.0-78.8 35.3-78.8 78.8.0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3C20 26 16.1 39.6 16.1 54c0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1.0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4.0-12.6-.4-18.8-1.1C34.9 299 76.3 312 120.8 312c144.9.0 224.1-120 224.1-224.1.0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
+<span>Twitter</span></a></div><div class="widget-social__item widget__item"><a class="widget-social__link widget__link btn" title=Instagram rel="noopener noreferrer" href=https://www.instagram.com/username target=_blank><svg class="widget-social__link-icon icon icon-instagram" width="24" height="24" viewBox="0 0 256 256"><circle cx="193" cy="59" r="15"/><path fill-rule="evenodd" d="M101 0h54c41 0 58.4 3.9 74.5 17C256.2 37.5 256 74.8 256 97.7v60c0 26.7.0 60.4-26.5 81.4-16 13.4-33.5 16.9-74.5 16.9h-54c-41 0-57.5-3.5-74.5-16.9C1 218.9.5 186.3.1 160.5L0 155V97.7c0-23-.2-60.2 26.5-80.7C45 2 60 0 101 0zm4.9 23h44.3c45.8.0 58.3 3.5 70.3 17.5 11.8 13.2 12 30.1 12.5 62.9V156c.2 20.8.3 45.8-12.5 59.5-12 14-24.5 17.5-70.3 17.5h-44.3c-45.9.0-57.3-3.5-70.4-17.5-12.2-13-12.3-36.5-12.4-56.7v-55.6c.4-32.6.7-49.6 12.4-62.7C48 26.5 60 23 105.9 23zm19.6 144.5a42 42 0 100-84 42 42 0 000 84zm0 22.5a64.5 64.5.0 100-129 64.5 64.5.0 000 129z"/></svg>
+<span>Instagram</span></a></div></div></div></aside></div><footer class=footer><div class="container footer__container flex"><div class=footer__copyright>&copy; 2025 生信普拉斯.
+<span class=footer__copyright-credits>Generated with <a href=https://gohugo.io/ rel="nofollow noopener" target=_blank>Hugo</a> and <a href=https://github.com/Vimux/Mainroad/ rel="nofollow noopener" target=_blank>Mainroad</a> theme.</span></div></div></footer></div><script async defer src=../../../../js/menu.js></script><script src=../../../../js/custom.js></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async></script></body></html>
