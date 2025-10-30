@@ -48,15 +48,9 @@
             font-size: 1.5em;
             margin-top: 40px;
             margin-bottom: 20px;
-            padding-right: 15px;
-            border-right: 5px solid #667eea;
+            padding-left: 15px;
+            border-left: 5px solid #667eea;
             font-weight: 600;
-            text-align: right;
-            direction: rtl;
-        }
-
-        h2 * {
-            direction: ltr;
         }
 
         h3 {
@@ -65,6 +59,67 @@
             margin-top: 28px;
             margin-bottom: 14px;
             font-weight: 600;
+        }
+
+        /* 分类浏览折叠功能 */
+        details {
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        details summary {
+            cursor: pointer;
+            padding: 15px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2d3748;
+            font-size: 1.25em;
+            font-weight: 600;
+            text-align: right;
+            direction: rtl;
+            border-right: 5px solid #667eea;
+            transition: all 0.3s ease;
+            list-style: none;
+            user-select: none;
+        }
+
+        details summary * {
+            direction: ltr;
+        }
+
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details summary::before {
+            content: '▶';
+            display: inline-block;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+            font-size: 0.8em;
+        }
+
+        details[open] summary::before {
+            transform: rotate(90deg);
+        }
+
+        details summary:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        details[open] summary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-right-color: white;
+        }
+
+        details .details-content {
+            padding: 20px;
+            background: white;
+            border: 1px solid #e9ecef;
+            border-top: none;
         }
 
         h4 {
@@ -469,115 +524,147 @@
                 <h3>🧬 GEO</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-NFIL3转录因子被确认为决定ILC命运的关键因子，其在淋巴祖细胞分化中的必要性和充分性得到证实。</p>
+NFIL3被确认为指定固有淋巴细胞（ILC）命运的关键转录因子，并首次在不同实验条件下（scRNA-seq, RNA-seq, DNase-seq）得到验证。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-*   <strong>细胞通讯与炎症</strong>：研究了GPP（泛发性脓疱型银屑病）中的中性粒细胞-角质形成细胞通讯网络，以及慢性尘螨暴露对小鼠肺部微环境的影响。<br />
-*   <strong>发育与疾病机制</strong>：探索了SCA3脊髓中的转录失调机制，以及NFIL3在ILC发育中的调控作用。<br />
-*   <strong>肿瘤治疗与耐药性</strong>：评估了DNA甲基化谱预测晚期胃癌抗PD-1治疗反应，并揭示了ZEB1对胰腺癌相关成纤维细胞对溶瘤重组病毒敏感性的影响。</p>
+*   <strong>细胞命运决定与分化</strong>：探索NFIL3在ILC发育中的关键作用，以及Notch2和RBPJ在髓系祖细胞中的功能。<br />
+*   <strong>疾病机制与治疗靶点</strong>：解析银屑病炎症反应中的细胞通讯网络（IL-36/TNFSF15），胃癌对免疫治疗的响应预测（DNA甲基化），以及SCA3脊髓中的转录调控异常。<br />
+*   <strong>细胞重编程与再生</strong>：研究成纤维细胞向视网膜色素上皮细胞的化学重编程，以及血管生成与内皮细胞重编程。</p>
 <p><strong>技术亮点</strong>：<br />
-*   <strong>单细胞与高通量测序</strong>：广泛应用于比较不同基因敲除（Notch2, RBPJ, NFIL3）对细胞谱系的影响，以及揭示细胞重编程和疾病模型中的转录组差异。<br />
-*   <strong>CRISPR-Cas9筛选</strong>：在免疫功能正常的宿主中进行，用于发现转移的潜在调控因子。</p>
+*   <strong>多维度验证</strong>：通过单细胞RNA测序（scRNA-seq）、RNA测序（RNA-seq）和DNase-seq等多种高通量测序技术，全面揭示NFIL3在ILC命运决定中的作用。<br />
+*   <strong>基因组学与转录组学整合</strong>：结合DNA甲基化测序与高通量RNA测序，用于预测癌症治疗响应和解析疾病机制。</p>
 <h3>📊 R-blogs</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-强调无需手动编写命令式代码即可构建可复现数据科学流程的创新方法。</p>
+介绍 {rixpress} 包，旨在简化可复现数据科学流水线的构建，强调无需亲自编写命令式代码。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-- 简化可复现数据科学管道的构建过程。<br />
-- 演示在无特定工具辅助下解决数据科学问题的挑战。</p>
+*   构建可复现的数据科学流水线。<br />
+*   通过 {rixpress} 包降低命令式代码编写的门槛。</p>
 <p><strong>技术亮点</strong>：<br />
-- 引入新型包 <code>{rixpress}</code>，旨在自动化和简化命令式代码的编写。<br />
-- 通过对比演示，突出 <code>{rixpress}</code> 在提升效率和减少手动编码方面的优势。</p>
+*   提供一种无需直接编写命令式代码即可构建可复现数据科学流水线的新型解决方案。<br />
+*   通过 {rixpress} 包的引入，解决数据科学流水线构建中的痛点。</p>
 <h3>🧪 测序类博客</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-首次实现单细胞层面基因表达与代谢产物生产的精准匹配；新型P-body-seq技术实现对P体内容物的全面剖析。</p>
+首次实现单植物细胞内基因表达与代谢物谱的同步分析，以及新型P-body-seq技术实现对P体内容物的全面剖析。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-- 揭示植物单细胞内基因调控与代谢产物合成的关联。<br />
-- 阐明P体在调控脊椎动物干细胞命运中的作用机制。</p>
+*   解析单细胞水平的基因表达与代谢物生产关联。<br />
+*   探究P体在调控脊椎动物干细胞命运中的作用。</p>
 <p><strong>技术亮点</strong>：<br />
-- 结合单细胞RNA测序与质谱分析，实现基因表达与代谢组学在同一细胞内的同步解析。<br />
-- 开发P-body-seq技术，用于全面分析P体中的RNA内容。</p>
+*   联用单细胞RNA测序与质谱技术。<br />
+*   开发P-body-seq技术用于RNA冷凝物组分分析。</p>
             </div><h2>📚 分类浏览</h2>
-<h3>🧬 GEO (60条)</h3>
-<h4>详细内容（前10条）</h4>
-<p><strong>1.</strong> ⭐ <strong>GSE289018 Comparative Single Cell RNA Sequencing of Notch2 and RBPJ-deficient mononuclear phagocyte cells and myeloid progenitors from the spleen and bone marrow</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、lymphoma、sequencing、RNAseq、single.cell、single-cell、scRNA、scDNA、scATAC、spatial、spatially、Visium、genome、proteome、metabolome、Seurat、Scanpy、epigenetic、epigenome、histone、enrichment、trajectory<br />
-- 📝 <strong>描述</strong>：Contributors : Jaba Gamrekelashvili ; Florian P LimbourgSeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusMononuclear phagocytes and their myeloid progenitors are critical in various homeostatic processes as well as immune responses. We employed single-cell RNA sequencing to investigate myeloid progenitors and mononuclear phagocytic cell subsets, including monocytes, splenic red pulp macrophages and dendritic cells in the spleen and in the bone marrow, with a...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE289018">查看原文</a></p>
-<p><strong>2.</strong> ⭐ <strong>GSE309097 Dynamic neutrophil-keratinocyte communication network centered on IL-36/TNFSF15 responses characterizes inflammatory responses in generalized pustular psoriasis.</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、leukemia、Hi-C、scRNA、scDNA、scATAC、spatial、spatially、genome、genomics、proteome、proteomics、Seurat、Scanpy、methylation、histone、enrichment、clustering<br />
-- 📝 <strong>描述</strong>：Contributors : Johann E Gudjonsson ; Lam C TsoiSeries Type : Expression profiling by high throughput sequencingOrganism : Homo sapiensGeneralized pustular psoriasis (GPP) is a severe subtype of psoriasis characterized by epidermal neutrophil infiltration, often presenting as acute, potentially life-threatening flares. However, the characterization of the immune micro-environment in GPP lesions remains largely unknown. Here, we used single-cell RNA profiling to interrogate the transcriptomes of 6...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE309097">查看原文</a></p>
-<p><strong>3.</strong> ⭐ <strong>GSE291317 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [scRNA-seq]</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、genomics、transcriptome、transcriptomics、Scanpy、histone、enrichment<br />
-- 📝 <strong>描述</strong>：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291317">查看原文</a></p>
-<p><strong>4.</strong> ⭐ <strong>GSE291316 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [RNA-seq - Tox]</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、transcriptome、Seurat、Scanpy、histone、enrichment<br />
-- 📝 <strong>描述</strong>：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291316">查看原文</a></p>
-<p><strong>5.</strong> ⭐ <strong>GSE291076 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [RNA-seq - Il7rLT]</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、transcriptome、Seurat、Scanpy、histone、enrichment<br />
-- 📝 <strong>描述</strong>：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291076">查看原文</a></p>
-<p><strong>6.</strong> ⭐ <strong>GSE291075 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [RNA-seq - ex vivo, Nfil3]</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、10x、spatial、spatially、genome、transcriptome、Scanpy、histone、enrichment<br />
-- 📝 <strong>描述</strong>：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291075">查看原文</a></p>
-<p><strong>7.</strong> ⭐ <strong>GSE305511 DNA Methylation Profiles Predicting Response to Anti-PD-1-based Treatment in Patients with Advanced Gastric Cancer [Targeted Bisulfite-Seq]</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：cancer、RNA-seq、RNAseq、DNA-seq、ATAC-seq、Hi-C、scRNA、scDNA、scATAC、spatial、genome、genomics、proteome、proteomics、epigenetic、epigenome、methylation、histone<br />
-- 📝 <strong>描述</strong>：Contributors : Wei Tang ; Zhixiong WangSeries Type : Methylation profiling by high throughput sequencingOrganism : Homo sapiensImmunotherapy has shown promise in treating gastric cancer, but predicting patient response remains challenging. In this study, DNA methylation levels at 20 specific CpG probes were measured in 69 tumor samples using targeted bisulfite sequencing (TBS). These CpG probes, previously identified as highly predictive of treatment response, were used to construct and validate...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE305511">查看原文</a></p>
-<p><strong>8.</strong> ⭐ <strong>GSE291319 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [DNase-seq]</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、transcriptome、Scanpy、histone、enrichment<br />
-- 📝 <strong>描述</strong>：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Genome binding/occupancy profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced ex...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291319">查看原文</a></p>
-<p><strong>9.</strong> ⭐ <strong>GSE300531 A Single-cell Transcriptomic Profiling Reveals the Effects of Chronic House Dust Mite Exposure on the Murine Lung Microenvironment</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、single.cell、single-cell、scRNA、scATAC、Visium、genome、genomics、transcriptome、transcriptomics、proteome、epigenetic、epigenome、histone、enrichment、clustering<br />
-- 📝 <strong>描述</strong>：Contributors : Han Chang ; Chanond A Nasamran ; Scott Herdman ; Maripat Corr ; Kathleen M Fisch ; Nicholas Webster ; Eyal Raz ; Samuel BertinSeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHouse dust mite (HDM) is a common environmental aeroallergen linked to the development of allergic airway inflammation and asthma. While the effects of acute HDM exposure on T helper 2 (Th2)-driven allergic responses and pulmonary eosinophilia are well established in muri...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE300531">查看原文</a></p>
-<p><strong>10.</strong> ⭐ <strong>GSE290358 ZEB1, a novel Junctional Adhesion Molecule A regulator, impacts sensitivity of pancreatic cancer-associated fibroblasts to oncolytic reovirus</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：tumor、cancer、oncology、Hi-C、single.cell、single-cell、scRNA、scDNA、scATAC、spatial、spatially、Visium、genome、genomics、Seurat、Scanpy、histone<br />
-- 📝 <strong>描述</strong>：Contributors : Dam Nicole ; Harryvan Tom J. ; Dang Hao ; Ioannidis Gavriil ; Schmierer Bernhard ; Haawinkels Lukas J.A.C. ; Kemp VeraSeries Type : OtherOrganism : Homo sapiensOncolytic virus (OV) therapy is a promising treatment for various tumors. However, in pancreatic ductal adenocarcinoma (PDAC), the high abundance of cancer-associated fibroblasts (CAFs) can limit OV therapy efficacy by impairing viral spread and anti-tumor immunity. We have previously shown that oncolytic reovirus infection...<br />
-- 🔗 <a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE290358">查看原文</a></p>
-<blockquote>
-<p>💡 该来源还有 50 条内容，详见 <a href="#更多-geo">文末</a></p>
-</blockquote>
-<hr />
-<h3>📊 R-blogs (1条)</h3>
-<h4>详细内容（全部1条）</h4>
-<p><strong>1.</strong> ⭐ <strong>Of course, someone has to write imperative code to build reproducible data science pipelines. It doesn’t have to be you.</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：scRNA、scDNA、scATAC、spatial、Seurat、Scanpy、histone<br />
-- 📝 <strong>描述</strong>：Last time I quickly introduced my latest package, {rixpress}, but I think that to really understand what {rixpress} brings to the table, one needs to solve the same problem without it. And incidentally, I think that this exercise also show... Continue reading: Of course, someone has to write imperative code to build reproducible data science pipelines. It doesn’t have to be you.<br />
-- 🔗 <a href="https://www.r-bloggers.com/2025/10/of-course-someone-has-to-write-imperative-code-to-build-reproducible-data-science-pipelines-it-doesnt-have-to-be-you/">查看原文</a></p>
-<hr />
-<h3>🧪 测序类博客 (2条)</h3>
-<h4>详细内容（全部2条）</h4>
-<p><strong>1.</strong> ⭐ <strong>Matching gene expression to metabolite production in single plant cells</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：single.cell、genome、genomics、histone<br />
-- 📝 <strong>描述</strong>：Researchers combined single-cell RNA sequencing with mass spectrometry to analyze gene expression and metabolite profiles in the same plant cell, offering new insights into...<br />
-- 🔗 <a href="https://www.rna-seqblog.com/matching-gene-expression-to-metabolite-production-in-single-plant-cells/">查看原文</a></p>
-<p><strong>2.</strong> <strong>P-body-seq permits comprehensive profiling of P-body contents</strong><br />
-- ✍️ <strong>作者</strong>：未知作者<br />
-- 🏷️ <strong>关键词</strong>：Hi-C<br />
-- 📝 <strong>描述</strong>：Researchers used RNA sequencing to show how RNA condensates called P-bodies control stem cell fate by storing untranslated RNAs that guide developmental decisions across vertebrate species..<br />
-- 🔗 <a href="https://www.rna-seqblog.com/p-body-seq-permits-comprehensive-profiling-of-p-body-contents/">查看原文</a></p>
-<hr />
+<details>
+<summary>🧬 GEO (60条)</summary>
+<div class="details-content">
+
+#### 详细内容（前10条）
+
+**1.** ⭐ **GSE289018 Comparative Single Cell RNA Sequencing of Notch2 and RBPJ-deficient mononuclear phagocyte cells and myeloid progenitors from the spleen and bone marrow**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、lymphoma、sequencing、RNAseq、single.cell、single-cell、scRNA、scDNA、scATAC、spatial、spatially、Visium、genome、proteome、metabolome、Seurat、Scanpy、epigenetic、epigenome、histone、enrichment、trajectory
+- 📝 **描述**：Contributors : Jaba Gamrekelashvili ; Florian P LimbourgSeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusMononuclear phagocytes and their myeloid progenitors are critical in various homeostatic processes as well as immune responses. We employed single-cell RNA sequencing to investigate myeloid progenitors and mononuclear phagocytic cell subsets, including monocytes, splenic red pulp macrophages and dendritic cells in the spleen and in the bone marrow, with a...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE289018)
+
+**2.** ⭐ **GSE309097 Dynamic neutrophil-keratinocyte communication network centered on IL-36/TNFSF15 responses characterizes inflammatory responses in generalized pustular psoriasis.**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、leukemia、Hi-C、scRNA、scDNA、scATAC、spatial、spatially、genome、genomics、proteome、proteomics、Seurat、Scanpy、methylation、histone、enrichment、clustering
+- 📝 **描述**：Contributors : Johann E Gudjonsson ; Lam C TsoiSeries Type : Expression profiling by high throughput sequencingOrganism : Homo sapiensGeneralized pustular psoriasis (GPP) is a severe subtype of psoriasis characterized by epidermal neutrophil infiltration, often presenting as acute, potentially life-threatening flares. However, the characterization of the immune micro-environment in GPP lesions remains largely unknown. Here, we used single-cell RNA profiling to interrogate the transcriptomes of 6...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE309097)
+
+**3.** ⭐ **GSE291317 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [scRNA-seq]**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、genomics、transcriptome、transcriptomics、Scanpy、histone、enrichment
+- 📝 **描述**：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291317)
+
+**4.** ⭐ **GSE291316 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [RNA-seq - Tox]**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、transcriptome、Seurat、Scanpy、histone、enrichment
+- 📝 **描述**：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291316)
+
+**5.** ⭐ **GSE291076 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [RNA-seq - Il7rLT]**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、transcriptome、Seurat、Scanpy、histone、enrichment
+- 📝 **描述**：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291076)
+
+**6.** ⭐ **GSE291075 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [RNA-seq - ex vivo, Nfil3]**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、10x、spatial、spatially、genome、transcriptome、Scanpy、histone、enrichment
+- 📝 **描述**：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced expression of NF...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291075)
+
+**7.** ⭐ **GSE305511 DNA Methylation Profiles Predicting Response to Anti-PD-1-based Treatment in Patients with Advanced Gastric Cancer [Targeted Bisulfite-Seq]**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：cancer、RNA-seq、RNAseq、DNA-seq、ATAC-seq、Hi-C、scRNA、scDNA、scATAC、spatial、genome、genomics、proteome、proteomics、epigenetic、epigenome、methylation、histone
+- 📝 **描述**：Contributors : Wei Tang ; Zhixiong WangSeries Type : Methylation profiling by high throughput sequencingOrganism : Homo sapiensImmunotherapy has shown promise in treating gastric cancer, but predicting patient response remains challenging. In this study, DNA methylation levels at 20 specific CpG probes were measured in 69 tumor samples using targeted bisulfite sequencing (TBS). These CpG probes, previously identified as highly predictive of treatment response, were used to construct and validate...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE305511)
+
+**8.** ⭐ **GSE291319 The transcription factor NFIL3 is necessary and sufficient to specify the ILC fate in lymphoid progenitors [DNase-seq]**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、carcinoma、RNA-seq、RNAseq、DNA-seq、ChIP-seq、ATAC-seq、scRNA、scDNA、scATAC、spatial、spatially、genome、transcriptome、Scanpy、histone、enrichment
+- 📝 **描述**：Contributors : Joseph Léger ; Eva Artano ; Delphine Coulais ; Naomie Belletoise ; Fadhloun Raoudha ; Devin Kenney ; Avinash Bhandoola ; Christelle HarlySeries Type : Genome binding/occupancy profiling by high throughput sequencingOrganism : Mus musculusHelper innate lymphoid cells (ILC) play important functions in immunity and tissue homeostasis, but their development remains poorly understood. In this study, we identified NFIL3 as the earliest known requirement during ILC development. Forced ex...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE291319)
+
+**9.** ⭐ **GSE300531 A Single-cell Transcriptomic Profiling Reveals the Effects of Chronic House Dust Mite Exposure on the Murine Lung Microenvironment**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、single.cell、single-cell、scRNA、scATAC、Visium、genome、genomics、transcriptome、transcriptomics、proteome、epigenetic、epigenome、histone、enrichment、clustering
+- 📝 **描述**：Contributors : Han Chang ; Chanond A Nasamran ; Scott Herdman ; Maripat Corr ; Kathleen M Fisch ; Nicholas Webster ; Eyal Raz ; Samuel BertinSeries Type : Expression profiling by high throughput sequencingOrganism : Mus musculusHouse dust mite (HDM) is a common environmental aeroallergen linked to the development of allergic airway inflammation and asthma. While the effects of acute HDM exposure on T helper 2 (Th2)-driven allergic responses and pulmonary eosinophilia are well established in muri...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE300531)
+
+**10.** ⭐ **GSE290358 ZEB1, a novel Junctional Adhesion Molecule A regulator, impacts sensitivity of pancreatic cancer-associated fibroblasts to oncolytic reovirus**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：tumor、cancer、oncology、Hi-C、single.cell、single-cell、scRNA、scDNA、scATAC、spatial、spatially、Visium、genome、genomics、Seurat、Scanpy、histone
+- 📝 **描述**：Contributors : Dam Nicole ; Harryvan Tom J. ; Dang Hao ; Ioannidis Gavriil ; Schmierer Bernhard ; Haawinkels Lukas J.A.C. ; Kemp VeraSeries Type : OtherOrganism : Homo sapiensOncolytic virus (OV) therapy is a promising treatment for various tumors. However, in pancreatic ductal adenocarcinoma (PDAC), the high abundance of cancer-associated fibroblasts (CAFs) can limit OV therapy efficacy by impairing viral spread and anti-tumor immunity. We have previously shown that oncolytic reovirus infection...
+- 🔗 [查看原文](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE290358)
+
+> 💡 该来源还有 50 条内容，详见 [文末](#更多-geo)
+
+</div>
+</details>
+
+<details>
+<summary>📊 R-blogs (1条)</summary>
+<div class="details-content">
+
+#### 详细内容（全部1条）
+
+**1.** ⭐ **Of course, someone has to write imperative code to build reproducible data science pipelines. It doesn’t have to be you.**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：scRNA、scDNA、scATAC、spatial、Seurat、Scanpy、histone
+- 📝 **描述**：Last time I quickly introduced my latest package, {rixpress}, but I think that to really understand what {rixpress} brings to the table, one needs to solve the same problem without it. And incidentally, I think that this exercise also show... Continue reading: Of course, someone has to write imperative code to build reproducible data science pipelines. It doesn’t have to be you.
+- 🔗 [查看原文](https://www.r-bloggers.com/2025/10/of-course-someone-has-to-write-imperative-code-to-build-reproducible-data-science-pipelines-it-doesnt-have-to-be-you/)
+
+
+</div>
+</details>
+
+<details>
+<summary>🧪 测序类博客 (2条)</summary>
+<div class="details-content">
+
+#### 详细内容（全部2条）
+
+**1.** ⭐ **Matching gene expression to metabolite production in single plant cells**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：single.cell、genome、genomics、histone
+- 📝 **描述**：Researchers combined single-cell RNA sequencing with mass spectrometry to analyze gene expression and metabolite profiles in the same plant cell, offering new insights into...
+- 🔗 [查看原文](https://www.rna-seqblog.com/matching-gene-expression-to-metabolite-production-in-single-plant-cells/)
+
+**2.** **P-body-seq permits comprehensive profiling of P-body contents**
+- ✍️ **作者**：未知作者
+- 🏷️ **关键词**：Hi-C
+- 📝 **描述**：Researchers used RNA sequencing to show how RNA condensates called P-bodies control stem cell fate by storing untranslated RNAs that guide developmental decisions across vertebrate species..
+- 🔗 [查看原文](https://www.rna-seqblog.com/p-body-seq-permits-comprehensive-profiling-of-p-body-contents/)
+
+
+</div>
+</details>
+
 <h2>📊 关键词统计</h2>
 <table class="keywords-table">
 <thead>
@@ -725,7 +812,7 @@ NFIL3转录因子被确认为决定ILC命运的关键因子，其在淋巴祖细
 <li><a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279858">GSE279858 Gene expression profile on dermal fibroblasts treated with melanocortin compounds</a></li>
 </ul>
 <hr />
-<p><em>📅 报告生成时间：2025-10-30 08:00</em><br />
+<p><em>📅 报告生成时间：2025-10-30 08:16</em><br />
 <em>🤖 由 GitHub Actions 自动生成</em></p>
     </div>
 </body>
