@@ -93,6 +93,23 @@
             margin-bottom: 0;
         }
 
+        blockquote em {
+            font-style: normal;
+            color: #718096;
+            font-size: 0.9em;
+        }
+
+        blockquote a {
+            color: #667eea;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        blockquote a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+
         /* AI 总结区域优化 */
         .ai-summary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -116,28 +133,11 @@
             pointer-events: none;
         }
 
-        .ai-summary-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
         .ai-summary h2 {
             color: white;
             border-left-color: rgba(255,255,255,0.5);
             margin-top: 0;
-            margin-bottom: 0;
-            flex: 1;
-        }
-
-        .powered-by {
-            font-size: 0.75em;
-            color: rgba(255,255,255,0.7);
-            font-weight: 400;
-            white-space: nowrap;
-            margin-left: 15px;
-            margin-top: 5px;
+            margin-bottom: 18px;
         }
 
         .ai-summary h3 {
@@ -421,47 +421,45 @@
         <h1>📅 Daily Report - 2025-10-30</h1>
 <blockquote>
 <p>今日筛选出 <strong>63</strong> 条内容，来自 <strong>3</strong> 个来源</p>
+<p><em>Powered by <a href="https://kyplus.de">科研普拉斯</a> &amp; <a href="https://claude.ai">Claude</a></em></p>
 </blockquote>
 <hr />
 <div class="ai-summary">
-                <div class="ai-summary-header">
-                    <h2>🤖 今日AI智能总结</h2>
-                    <span class="powered-by">Powered by 科研普拉斯 & Claude</span>
-                </div>
+                <h2>🤖 今日AI智能总结</h2>
                 <h3>🧬 GEO</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-NFIL3被确认为决定ILC命运的关键转录因子，其在淋巴祖细胞中的作用得到多项研究（scRNA-seq, RNA-seq, DNase-seq）的证实。</p>
+NFIL3被确认为指定ILC命运的关键转录因子，为免疫细胞分化机制提供了重要见解。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-*   <strong>免疫细胞发育与功能调控</strong>：研究NFIL3对ILC命运决定，Notch2/RBPJ信号通路对单核吞噬细胞及骨髓祖细胞的影响，以及mTORC1通过NMUR1调控ILC2激活和过敏性肺部炎症。<br />
-*   <strong>疾病机制与治疗靶点探索</strong>：揭示IL-36/TNFSF15信号通路在脓疱型银屑病中的作用，ZEB1对胰腺癌相关成纤维细胞对溶瘤重组病毒敏感性的影响，以及REV-ERBα作为肿瘤细胞谱系可塑性的主调控因子和治疗靶点。<br />
-*   <strong>基因组学与表观遗传学</strong>：探索DNA甲基化谱预测晚期胃癌抗PD-1治疗反应，以及染色体2q31区域复杂DNA结构变异与儿童发育迟缓/先天畸形的关系。</p>
+- 探究NFIL3在淋巴源性祖细胞中指定ILC命运的作用。<br />
+- 分析Notch2和RBPJ缺陷对单核吞噬细胞及其髓系祖细胞的影响。<br />
+- 揭示IL-36/TNFSF15信号通路在脓疱型银屑病中的炎症反应网络。</p>
 <p><strong>技术亮点</strong>：<br />
-*   <strong>单细胞测序 (scRNA-seq)</strong>：广泛应用于揭示细胞异质性，如NFIL3在淋巴祖细胞中的作用，以及慢性尘螨暴露对小鼠肺部微环境的影响。<br />
-*   <strong>CRISPR-Cas9筛选技术</strong>：应用于免疫活性宿主中，以发现新的转移性调控因子。</p>
+- 结合单细胞RNA测序（scRNA-seq）和RNA测序（RNA-seq）等多种高通量测序技术，深入解析细胞异质性和基因表达。<br />
+- 利用CRISPR-Cas9筛选技术，在免疫功能完整的宿主中揭示潜在的转移性调控因子。</p>
 <h3>📊 R-blogs</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-介绍 {rixpress} 包，该包旨在简化可复现数据科学流水线的构建，通过提供一种无需直接编写命令式代码的解决方案。</p>
+新R包{rixpress}旨在简化可复现数据科学管道的构建，无需编写命令式代码。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-- 构建可复现的数据科学流水线<br />
-- 简化数据科学工作流程的管理</p>
+*   自动化构建和管理可复现的数据科学工作流。<br />
+*   降低数据科学管道开发的门槛，减少手动编码需求。</p>
 <p><strong>技术亮点</strong>：<br />
-- 提供一种替代命令式编程的方法来构建流水线<br />
-- 强调通过解决相同问题来理解 {rixpress} 的价值</p>
+*   提供一种无需命令式编程即可实现可复现数据科学管道的解决方案。<br />
+*   通过抽象命令式代码，提高管道构建的效率和易用性。</p>
 <h3>🧪 测序类博客</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-首次实现单植物细胞内基因表达与代谢产物谱的同步测定，揭示了单个细胞层面的代谢调控机制。</p>
+首次将单细胞RNA测序与质谱联用，实现单株植物细胞内基因表达与代谢产物谱的同步分析，揭示细胞命运调控新机制。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-- 整合单细胞RNA测序与质谱联用，解析植物细胞基因表达与代谢产物间的关联。<br />
-- 利用RNA测序技术，阐明P-body在脊椎动物干细胞命运决定中的作用。</p>
+- 植物单细胞基因表达与代谢产物关联分析<br />
+- RNA冷凝物（P-body）在干细胞命运决定中的作用机制</p>
 <p><strong>技术亮点</strong>：<br />
-- P-body-seq：一种新型方法，可全面剖析P-body内的RNA成分。<br />
-- 单细胞多组学联用：实现基因表达和代谢产物在同一细胞内的同步分析。</p>
+- P-body-seq：新型RNA测序技术，实现对P-body内RNA内容的全面剖析。<br />
+- 单细胞多组学整合：首次实现单株植物细胞内基因表达和代谢谱的同步定量。</p>
             </div><h2>📚 分类浏览</h2>
 <h3>🧬 GEO (60条)</h3>
 <h4>详细内容（前10条）</h4>
@@ -687,7 +685,7 @@ NFIL3被确认为决定ILC命运的关键转录因子，其在淋巴祖细胞中
 <li><a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279858">GSE279858 Gene expression profile on dermal fibroblasts treated with melanocortin compounds</a></li>
 </ul>
 <hr />
-<p><em>📅 报告生成时间：2025-10-30 06:12</em><br />
+<p><em>📅 报告生成时间：2025-10-30 07:02</em><br />
 <em>🤖 由 GitHub Actions 自动生成</em></p>
     </div>
 </body>
