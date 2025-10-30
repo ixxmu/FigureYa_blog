@@ -48,9 +48,15 @@
             font-size: 1.5em;
             margin-top: 40px;
             margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 5px solid #667eea;
+            padding-right: 15px;
+            border-right: 5px solid #667eea;
             font-weight: 600;
+            text-align: right;
+            direction: rtl;
+        }
+
+        h2 * {
+            direction: ltr;
         }
 
         h3 {
@@ -110,6 +116,27 @@
             border-bottom-color: #764ba2;
         }
 
+        /* 顶部署名（居右） */
+        .powered-by-top {
+            text-align: right;
+            font-size: 0.85em;
+            color: #718096;
+            font-style: italic;
+            margin: 12px 0;
+            padding-right: 5px;
+        }
+
+        .powered-by-top a {
+            color: #667eea;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .powered-by-top a:hover {
+            color: #764ba2;
+            border-bottom-color: #764ba2;
+        }
+
         /* AI 总结区域优化 */
         .ai-summary {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -135,16 +162,28 @@
 
         .ai-summary h2 {
             color: white;
-            border-left-color: rgba(255,255,255,0.5);
+            border-left: none;
+            border-right: none;
             margin-top: 0;
             margin-bottom: 18px;
+            padding-left: 15px;
+            padding-right: 0;
+            text-align: left;
+            direction: ltr;
         }
 
         .ai-summary h3 {
             color: #f0f0f0;
             margin-top: 18px;
-            border-left: 3px solid rgba(255,255,255,0.5);
-            padding-left: 12px;
+            border-right: 3px solid rgba(255,255,255,0.5);
+            padding-right: 12px;
+            padding-left: 0;
+            text-align: right;
+            direction: rtl;
+        }
+
+        .ai-summary h3 * {
+            direction: ltr;
         }
 
         .ai-summary blockquote {
@@ -421,45 +460,46 @@
         <h1>📅 Daily Report - 2025-10-30</h1>
 <blockquote>
 <p>今日筛选出 <strong>63</strong> 条内容，来自 <strong>3</strong> 个来源</p>
-<p><em>Powered by <a href="https://kyplus.de">科研普拉斯</a> &amp; <a href="https://claude.ai">Claude</a></em></p>
 </blockquote>
+<div class="powered-by-top">Powered by <a href="https://kyplus.de">科研普拉斯</a> & <a href="https://claude.ai">Claude</a></div>
+
 <hr />
 <div class="ai-summary">
                 <h2>🤖 今日AI智能总结</h2>
                 <h3>🧬 GEO</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-NFIL3被确认为指定ILC命运的关键转录因子，为免疫细胞分化机制提供了重要见解。</p>
+NFIL3转录因子被确认为决定ILC命运的关键因子，其在淋巴祖细胞分化中的必要性和充分性得到证实。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-- 探究NFIL3在淋巴源性祖细胞中指定ILC命运的作用。<br />
-- 分析Notch2和RBPJ缺陷对单核吞噬细胞及其髓系祖细胞的影响。<br />
-- 揭示IL-36/TNFSF15信号通路在脓疱型银屑病中的炎症反应网络。</p>
+*   <strong>细胞通讯与炎症</strong>：研究了GPP（泛发性脓疱型银屑病）中的中性粒细胞-角质形成细胞通讯网络，以及慢性尘螨暴露对小鼠肺部微环境的影响。<br />
+*   <strong>发育与疾病机制</strong>：探索了SCA3脊髓中的转录失调机制，以及NFIL3在ILC发育中的调控作用。<br />
+*   <strong>肿瘤治疗与耐药性</strong>：评估了DNA甲基化谱预测晚期胃癌抗PD-1治疗反应，并揭示了ZEB1对胰腺癌相关成纤维细胞对溶瘤重组病毒敏感性的影响。</p>
 <p><strong>技术亮点</strong>：<br />
-- 结合单细胞RNA测序（scRNA-seq）和RNA测序（RNA-seq）等多种高通量测序技术，深入解析细胞异质性和基因表达。<br />
-- 利用CRISPR-Cas9筛选技术，在免疫功能完整的宿主中揭示潜在的转移性调控因子。</p>
+*   <strong>单细胞与高通量测序</strong>：广泛应用于比较不同基因敲除（Notch2, RBPJ, NFIL3）对细胞谱系的影响，以及揭示细胞重编程和疾病模型中的转录组差异。<br />
+*   <strong>CRISPR-Cas9筛选</strong>：在免疫功能正常的宿主中进行，用于发现转移的潜在调控因子。</p>
 <h3>📊 R-blogs</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-新R包{rixpress}旨在简化可复现数据科学管道的构建，无需编写命令式代码。</p>
+强调无需手动编写命令式代码即可构建可复现数据科学流程的创新方法。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-*   自动化构建和管理可复现的数据科学工作流。<br />
-*   降低数据科学管道开发的门槛，减少手动编码需求。</p>
+- 简化可复现数据科学管道的构建过程。<br />
+- 演示在无特定工具辅助下解决数据科学问题的挑战。</p>
 <p><strong>技术亮点</strong>：<br />
-*   提供一种无需命令式编程即可实现可复现数据科学管道的解决方案。<br />
-*   通过抽象命令式代码，提高管道构建的效率和易用性。</p>
+- 引入新型包 <code>{rixpress}</code>，旨在自动化和简化命令式代码的编写。<br />
+- 通过对比演示，突出 <code>{rixpress}</code> 在提升效率和减少手动编码方面的优势。</p>
 <h3>🧪 测序类博客</h3>
 <blockquote>
 <p><strong>今日焦点</strong>：<br />
-首次将单细胞RNA测序与质谱联用，实现单株植物细胞内基因表达与代谢产物谱的同步分析，揭示细胞命运调控新机制。</p>
+首次实现单细胞层面基因表达与代谢产物生产的精准匹配；新型P-body-seq技术实现对P体内容物的全面剖析。</p>
 </blockquote>
 <p><strong>主要方向</strong>：<br />
-- 植物单细胞基因表达与代谢产物关联分析<br />
-- RNA冷凝物（P-body）在干细胞命运决定中的作用机制</p>
+- 揭示植物单细胞内基因调控与代谢产物合成的关联。<br />
+- 阐明P体在调控脊椎动物干细胞命运中的作用机制。</p>
 <p><strong>技术亮点</strong>：<br />
-- P-body-seq：新型RNA测序技术，实现对P-body内RNA内容的全面剖析。<br />
-- 单细胞多组学整合：首次实现单株植物细胞内基因表达和代谢谱的同步定量。</p>
+- 结合单细胞RNA测序与质谱分析，实现基因表达与代谢组学在同一细胞内的同步解析。<br />
+- 开发P-body-seq技术，用于全面分析P体中的RNA内容。</p>
             </div><h2>📚 分类浏览</h2>
 <h3>🧬 GEO (60条)</h3>
 <h4>详细内容（前10条）</h4>
@@ -685,7 +725,7 @@ NFIL3被确认为指定ILC命运的关键转录因子，为免疫细胞分化机
 <li><a href="http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE279858">GSE279858 Gene expression profile on dermal fibroblasts treated with melanocortin compounds</a></li>
 </ul>
 <hr />
-<p><em>📅 报告生成时间：2025-10-30 07:02</em><br />
+<p><em>📅 报告生成时间：2025-10-30 08:00</em><br />
 <em>🤖 由 GitHub Actions 自动生成</em></p>
     </div>
 </body>
